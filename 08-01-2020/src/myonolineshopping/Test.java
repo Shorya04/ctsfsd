@@ -12,7 +12,7 @@ public class Test  {
 		System.out.println(employee1);
 		if(employee.equals(employee1))
 		{
-			throw new EmployeeNotCreatedException("employee can't be created");
+		throw new EmployeeNotCreatedException("employee can't be created");
 		}
 		
 	}
