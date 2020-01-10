@@ -8,7 +8,7 @@ public class TestComp {
 	public static void main(String[] args) {
 		
 		Comparator c =new GPAcomp();
-		c=new NameComp();
+		c=new GPAcomp();
 		Set<Student> studentSet= new TreeSet<Student>(c);
 		studentSet.add(new Student("Shorya", "Singh", 101, 4.0));
 		studentSet.add(new Student("Anshita", "Chandel", 102, 2.8));
