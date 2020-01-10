@@ -1,38 +1,26 @@
 package comm.ex;
 
-import lombok.AllArgsConstructor;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 @NoArgsConstructor
-@AllArgsConstructor
+
 @Getter
 @Setter
 @ToString
 
-public class Student implements Comparable<Student>{
+public class Student{
 	
-	private String rollNo;
+	private int rollNo=0;
 	private String firstName;
 	private String lastName;
-	private double cgpa;
-	@Override
-	public int compareTo(Student student) {
-	int result=0;
-	if(this.getCgpa()>student.getCgpa()) {
-		result=1;
-	}
-		if(this.getCgpa()==student.getCgpa()) {
-			result=0;
-		}
-		if(this.getCgpa()<student.getCgpa()) {
-			result=-1;
-		}
-		return result;
-	}
-	@Override
+	private double cgpa=0.0;
+	
+
+	/*@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -47,12 +35,36 @@ public class Student implements Comparable<Student>{
 		if(object instanceof Student) {
 			student=(Student) object;
 		}
-			if((this.getFirstName()==student.getFirstName()) && (this.getLastName()==student.getLastName())){
+			if((this.getFirstName().equals(student.getFirstName()))  && (this.getLastName().equals(student.getLastName()))){
 				isEqual=true;
-				//throw new InvalidNameException("Can't get Student");
+				 //throw new StudentException("Can't get Student");
 			}
 			return isEqual;
-			}
+			}*/
+	public Student(String firstName, String lastName, int rollNo, double cgpa) {
+		if(firstName==null || lastName==null || rollNo==0 || cgpa==0.0) {
+			throw new NullPointerException();
+		}
+		this.rollNo = rollNo;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.cgpa = cgpa;
+	}
+	public String firstName() {
+		return firstName;
+	}
+
+	public String lastName() {
+		return lastName;
+	}
+
+	public int studentID() {
+		return rollNo;
+	}
+
+	public double cgpa() {
+		return cgpa;
+	}
 			
 	}
 

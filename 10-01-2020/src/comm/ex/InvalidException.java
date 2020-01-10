@@ -1,9 +1,8 @@
 package comm.ex;
 
-public class InvalidNameException extends Throwable{
+public class StudentException extends Throwable{
 	
-	private String message;
-	public InvalidNameException(String message) {
+	public StudentException(String message) {
 		super(message);
 	}
 	}
