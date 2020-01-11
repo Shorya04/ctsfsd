@@ -18,8 +18,10 @@ public class FileClass {
 		try {
 			f.createNewFile();
 		} catch (IOException e) {
-			
 		}
+		
+	
+		
 		System.out.println("Name: "+f.getName());
 		if(f.exists()) {
 			System.out.println(f+ " does Exist!!");
@@ -38,5 +40,7 @@ public class FileClass {
 			
 		}
 	}
-
 }
+		
+
+
