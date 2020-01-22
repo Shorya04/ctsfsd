@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2020 1:28:55 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="HIBERNATE.myCompany.BidirectionalMapping.Model.Album" table="ALBUM">
+        <id name="albumId" type="int">
+            <column name="ALBUMID" />
+            <generator class="assigned" />
+        </id>
+        <property name="albumName" type="java.lang.String">
+            <column name="ALBUMNAME" />
+        </property>
+        <property name="date" type="java.time.LocalDate">
+            <column name="DATE" />
+        </property>
+        <one-to-one name="image" class="HIBERNATE.myCompany.BidirectionalMapping.Model.Image"></one-to-one>
+    </class>
+</hibernate-mapping>
