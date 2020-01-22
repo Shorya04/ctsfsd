@@ -1,4 +1,4 @@
-package HIBERNATE.myCompany.hibernateAnnotation;
+                                    package HIBERNATE.myCompany.hibernateAnnotation;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
