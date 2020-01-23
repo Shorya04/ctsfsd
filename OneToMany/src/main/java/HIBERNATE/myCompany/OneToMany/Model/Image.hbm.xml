@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 22, 2020 9:16:24 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="HIBERNATE.myCompany.OneToMany.Model.Image" table="IMAGE">
+        <id name="imageId" type="int">
+            <column name="IMAGEID" />
+            <generator class="assigned" />
+        </id>
+        <property name="imageURL" type="java.lang.String">
+            <column name="IMAGEURL" />
+        </property>
+        <many-to-one name="album" class="HIBERNATE.myCompany.OneToMany.Model.Album" fetch="join">
+            <column name="ALBUM" />
+        </many-to-one>
+        <list name="albums" inverse="false" table="ALBUM" lazy="true">
+            <key>
+                <column name="IMAGEID" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="HIBERNATE.myCompany.OneToMany.Model.Album" />
+        </list>
+    </class>
+</hibernate-mapping>
