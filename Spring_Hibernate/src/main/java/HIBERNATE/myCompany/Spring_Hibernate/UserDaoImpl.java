@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import HIBERNATE.myCompany.Spring_Hibernate.Entity.User;
 
-@Repository("dao")
+@Repository
 public class UserDaoImpl implements UserDao {
 
 	private SessionFactory factory;
