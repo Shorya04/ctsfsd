@@ -2,6 +2,7 @@ package view;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -25,7 +26,9 @@ public class CustomerView extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		Customer c=(Customer) request.getAttribute("SUCCESS");
-		out.println("Customer "+c.getFirstname()+c.getLastname()+" is added in Customer with Id "+c.getId());
+		
+		out.println("<table border='1'><tr><td>Customer ID</td><td>First Name</td><td>Last Name</td><td>Email</td></tr>");
+		out.println("<tr><td>"+ c.getUId()+"</td><td>"+c.getFirstname()+"</td><td>"+c.getFirstname()+"</td><td>"+c.getEmail()+"</td></tr></table>");
 		
 
 }

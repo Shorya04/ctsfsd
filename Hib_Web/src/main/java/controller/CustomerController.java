@@ -1,22 +1,27 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import comm.model.Customer;
+import comm.model.CustomerDto;
 import comm.service.CustomerService;
 import comm.service.CustomerServiceImpl;
+import mapper.CustomerDtoImpl;
+import mapper.CustomerMapper;
 
 
 public class CustomerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private CustomerService service;
+	private CustomerDtoImpl impl;
        
   
   @Override
@@ -24,6 +29,7 @@ public class CustomerController extends HttpServlet {
 			
 			super.init();
 			service=new CustomerServiceImpl();
+			impl=new CustomerMapper();
 		}
 	
 	
@@ -41,12 +47,13 @@ public class CustomerController extends HttpServlet {
 		String lastname=request.getParameter("lastname");
 		String email=request.getParameter("email");
 		//CustomerDTOImpl impl = null;
-		Customer c=new Customer(firstname, lastname, email);
-		Customer c1=service.cretateCustomer(c);
-		if(c1!=null)
+		CustomerDto dto=new CustomerDto(UUID.randomUUID().toString(),firstname, lastname, email);
+		Customer customer=service.cretateCustomer(impl.customerDtotoCustomer(dto));
+		if(customer!=null)
 		{
-			request.setAttribute("SUCCESS", c1);
-			RequestDispatcher view=request.getRequestDispatcher("success.view");
+			List<Customer> list=service.getAllCustomer();
+			request.setAttribute("SUCCESS", list);
+			RequestDispatcher view=request.getRequestDispatcher("success.jsp");
 			view.forward(request, response);
 		}
 		else
