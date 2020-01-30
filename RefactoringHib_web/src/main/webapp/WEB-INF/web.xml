@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+                         "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+ <display-name>Archetype Created Web Application</display-name>
+ <servlet>
+  <servlet-name>CustomerController</servlet-name>
+  <display-name>CustomerController</display-name>
+  <servlet-class>controller.CustomerController</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>Homecontroller</servlet-name>
+  <display-name>Homecontroller</display-name>
+  <servlet-class>controller.Homecontroller</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>CustomerUpdateController</servlet-name>
+  <display-name>CustomerUpdateController</display-name>
+  <servlet-class>controller.CustomerUpdateController</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>UpdateCustomer</servlet-name>
+  <display-name>UpdateCustomer</display-name>
+  <servlet-class>controller.UpdateCustomer</servlet-class>
+ </servlet>
+ <servlet>
+ 	<servlet-name>DeleteServlet</servlet-name>
+ 	<display-name>DeleteServlet</display-name>
+ 	<description></description>
+ 	<servlet-class>controller.DeleteServlet</servlet-class>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>CustomerController</servlet-name>
+  <url-pattern>/controller.do</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>Homecontroller</servlet-name>
+  <url-pattern>/homecontroller.do</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>CustomerUpdateController</servlet-name>
+  <url-pattern>/updateController.do</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>UpdateCustomer</servlet-name>
+  <url-pattern>/updateCustomer.do</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+ 	<servlet-name>DeleteServlet</servlet-name>
+ 	<url-pattern>/deleteCustomer.do</url-pattern>
+ </servlet-mapping>
+</web-app>

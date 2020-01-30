@@ -22,12 +22,12 @@
       <th scope="col">Email</th>
     </tr>
   </thead>
- <%  
- 
- List<Customer> list=(List<Customer>)request.getAttribute("SUCCESS");
- CustomerMapper impl=new CustomerMapper();
- for(Customer c:list){
-	 CustomerDto dto=impl.custertoCustomerDtoCustomer(c); %>
+ <%
+ 	List<Customer> list=(List<Customer>)request.getAttribute("SUCCESS");
+  CustomerMapper impl=new CustomerMapper();
+  for(Customer c:list){
+ 	 CustomerDto dto=impl.custertoCustomerDtoCustomer(c);
+ %>
 	 
 	 <tbody>
 	    <tr>
