@@ -11,7 +11,19 @@
 <h1 align="center"><u>Registration form</u></h1>
 <form:form action="processLogin" modelAttribute="student" method="post">
 First Name:<form:input path="firstname"></form:input>
+<form:errors path="firstname"> </form:errors>
+<br>
 Last Name:<form:input path="lastname"></form:input>
+<form:errors path="lastname"></form:errors>
+<br>
+Age:<form:input path="age"/>
+<form:errors path="age"></form:errors>
+<br>
+Email:<form:input path="email"/>
+<form:errors path="email"></form:errors>
+<br>
+Mobile:<form:input path="mobile"/>
+<form:errors path="mobile"></form:errors>
 <br>
 Country:
 <form:select path="country">
