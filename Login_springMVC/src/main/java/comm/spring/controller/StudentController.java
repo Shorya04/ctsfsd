@@ -2,11 +2,14 @@ package comm.spring.controller;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,6 +21,10 @@ import comm.spring.model.Student;
 @RequestMapping("/student")
 public class StudentController {
 	
+	public void InitBinder(WebDataBinder binder) {
+		StringTrimmerEditor str=new StringTrimmerEditor(true);
+		binder.registerCustomEditor(String.class,str);
+	}
 	@RequestMapping("/showform")
 	public String toHome(Model model) {
 		
