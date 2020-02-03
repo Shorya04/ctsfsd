@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%><%@page isELIgnored="false" %>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<p>Student successfully inserted!!</p>
- First Name:${fName}
- Last Name:${lName}
+Student added successfully!!
+First Name: ${student.firstName}
+Last Name: ${student.lastName}
+
 </body>
 </html>
