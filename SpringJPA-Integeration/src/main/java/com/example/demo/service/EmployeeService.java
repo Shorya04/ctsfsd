@@ -9,5 +9,6 @@ public interface EmployeeService {
 	
 	public List<Employee> getAllEmployees();
 	public Optional<Employee> findById(Integer employeeId);
+	public Employee createEmployee(Employee employee);
 
 }

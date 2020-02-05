@@ -33,5 +33,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 		Optional<Employee> employee=employeeDao.findById(employeeId);
 		return employee;
 	}
+	
+	public Employee createEmployee(Employee employee) {
+		return employeeDao.save(employee);
+	}
 
 }
