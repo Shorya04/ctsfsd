@@ -100,11 +100,11 @@ public class EmployeeRestController {
     	return employeeService.findBySalary(salary);
     }
     @GetMapping("/employees/findByAuthorAndSalary/{salary}")
-	public List<Employee> findByEmployeeNameAndSalary(@PathVariable String employeeName,double salary){
+	public List<Employee> findByEmployeeNameAndSalary(@PathVariable String employeeName,@PathVariable double salary){
     	return employeeService.findByEmployeeNameAndSalary(employeeName, salary);
     }
     @GetMapping
-	public List<Employee> findByEmployeeNameOrSalary(@PathVariable String employeeName,double salary){
+	public List<Employee> findByEmployeeNameOrSalary(@PathVariable String employeeName,@PathVariable double salary){
     	return employeeService.findByEmployeeNameOrSalary(employeeName, salary);
     }
 
