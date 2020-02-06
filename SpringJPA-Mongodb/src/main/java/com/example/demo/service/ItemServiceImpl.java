@@ -3,11 +3,15 @@ package com.example.demo.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.modelmapper.ModelMapper;
+import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.example.demo.model.Item;
+import com.example.demo.model.ShareItem;
 import com.example.demo.repository.ItemRepository;
 @Service
 @EnableTransactionManagement
@@ -15,11 +19,15 @@ public class ItemServiceImpl implements ItemService {
 
 	@Autowired
 	private ItemRepository itemRepository;
+	@Autowired
+	private ModelMapper modelMapper;
+	
 	
 	@Override
-	public Item createItem(Item item) {
+	public ShareItem createItem(Item item) {
 		// TODO Auto-generated method stub
-		return itemRepository.insert(item);
+		Item tempItem=itemRepository.insert(item);
+		return modelMapper.map(tempItem, ShareItem.class);
 	}
 
 	@Override
@@ -70,5 +78,6 @@ public class ItemServiceImpl implements ItemService {
 		itemRepository.deleteAll();
 		
 	}
+	
 
 }

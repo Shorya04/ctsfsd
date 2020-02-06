@@ -8,11 +8,14 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.exception.ItemNotFoundException;
 import com.example.demo.model.Item;
+import com.example.demo.model.ShareItem;
 import com.example.demo.service.ItemService;
 
 @RestController
@@ -28,7 +31,7 @@ public class ItemController {
 	}
 	
 	@PostMapping("/items")
-	public Item createItem(@RequestBody Item item) {
+	public ShareItem createItem(@RequestBody Item item) {
 		return itemService.createItem(item);
 	}
 	
@@ -38,8 +41,13 @@ public class ItemController {
 	}
 	
 	@GetMapping("/items/{itemId}")
-	public Optional<Item> findById(@PathVariable String itemId){
-		return itemService.findById(itemId);
+	public Optional<Item> findById(@PathVariable String itemId) throws ItemNotFoundException{
+		Optional<Item> item=itemService.findById(itemId);
+		if(!item.isPresent())
+    	{
+    	throw new  ItemNotFoundException("Item with ID "+itemId+" not found!!");
+    	}
+		return item;
 	}
 	
 	@GetMapping("/items/findByItemName/{itemName}")
@@ -65,6 +73,11 @@ public class ItemController {
 	@DeleteMapping("/items")
 	public void deleteAll() {
 		itemService.deleteAll();
+	}
+	@PutMapping("/items")
+	public ShareItem updateItem(@RequestBody Item item) {
+		
+		return itemService.createItem(item);
 	}
 
 

@@ -6,11 +6,12 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Item;
+import com.example.demo.model.ShareItem;
 
 
 public interface ItemService {
 	
-	public Item createItem(Item item);
+	public ShareItem createItem(Item item);
 	public List<Item> findAllItems();
 	public Optional<Item> findById(String itemId);
 	public List<Item> findByItemName(String itemName);
