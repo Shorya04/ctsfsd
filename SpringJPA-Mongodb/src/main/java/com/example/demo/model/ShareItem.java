@@ -15,4 +15,5 @@ public class ShareItem {
 private String itemName;
 private double price;
 private String ISBN;
+private Product product;
 }

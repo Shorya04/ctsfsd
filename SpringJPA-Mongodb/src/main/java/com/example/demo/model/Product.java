@@ -18,6 +18,6 @@ public class Product {
 	 
 	private String brand;
 	private String category;
-	private Product product;
+
 
 }
