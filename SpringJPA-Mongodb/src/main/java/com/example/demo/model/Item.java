@@ -20,5 +20,5 @@ public class Item {
 	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy" )
 	private LocalDate billDate;
 	private String isbn;
-	//private Product product;
+	private Product product;
 }
