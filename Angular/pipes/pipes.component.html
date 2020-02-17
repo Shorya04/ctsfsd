@@ -1,0 +1,26 @@
+<h1>Pipes Demo</h1>
+<br>
+<p>{{ name | lowercase }}</p>
+<p>{{ name | uppercase }}</p>
+<p>{{ name | titlecase }}</p>
+
+<p>{{ person | json }}</p>
+<p>{{ .25 | percent }}</p>
+<p>{{  100 | currency }}</p>
+<p>{{  100 | currency : 'INR' }}</p>
+<p>{{  100 | currency : 'INR' : 'code' }}</p>
+<p>{{ 100.00 | currency : 'AED' }}</p>
+
+<p>{{ currentDate }}</p>
+<p>{{ currentDate | date : 'shortDate' }}</p>
+<p>{{ currentDate | date : 'longDate' }}</p>
+<p>{{ currentDate | date : 'longTime' }}</p>
+
+<p>{{ 123.12 | number: '2.1-2' }}</p>
+<p>{{ 123.12 | number: '5.1-2' }}</p>
+<p>{{ 123.12 | number: '3.1-2' }}</p>
+
+
+
+
+

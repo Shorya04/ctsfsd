@@ -18,6 +18,12 @@ import { ClassBindingComponent } from './class-binding/class-binding.component';
 import { StyleBindingComponent } from './style-binding/style-binding.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { TwobindingComponent } from './twobinding/twobinding.component';
+import { ComponentInteractionComponent } from './component-interaction/component-interaction.component';
+import { ChildToParentComponent } from './child-to-parent/child-to-parent.component';
+import { PipesComponent } from './pipes/pipes.component';
+import { PipesTableComponent } from './pipes-table/pipes-table.component';
+import { TitlePipe } from './title-pipe';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +41,13 @@ import { TwobindingComponent } from './twobinding/twobinding.component';
     ClassBindingComponent,
     StyleBindingComponent,
     DirectivesComponent,
-    TwobindingComponent
+    TwobindingComponent,
+    ComponentInteractionComponent,
+    ChildToParentComponent,
+    PipesComponent,
+    PipesTableComponent,
+    TitlePipe,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,

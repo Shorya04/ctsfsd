@@ -1,0 +1,23 @@
+<p>Employee Component 2</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        <th>Date of Birth</th>
+    </tr>
+</thead>
+<tbody *ngFor="let employee of employees">
+    <tr>
+        <td>{{ employee.empId }}</td>
+        <td>{{ employee.name | salutation: employee.Gender}}</td>
+        <td>{{ employee.Gender  }}</td>
+        <td> {{ employee.Salary | currency: 'INR'}}</td>
+        <td>{{ employee.DateOfBirth | date: 'longDate' }}</td>
+    </tr>
+</tbody>
+
+</table>
+

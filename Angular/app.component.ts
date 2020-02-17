@@ -7,4 +7,21 @@ import {MyComponent} from './custom.component'
 })
 export class AppComponent {
   title = 'MyAngularProject';
-}
+
+  message:"";
+
+ /* data={
+    firstname:"shorya",
+    lastname:"singh",
+    email:"shorya@gnail.com"
+  }*/
+ 
+  /*constructor(){
+  this.firstname="Shorya";
+  this.lastname="Singh"
+  this.email="shorya@gmail.com"*/
+
+  }
+
+  
+
