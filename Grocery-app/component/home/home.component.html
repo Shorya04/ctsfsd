@@ -1,0 +1,18 @@
+<div class="container">
+  <h2 class="text-center">All Categories</h2>
+  <br>
+  <div class="row">
+
+
+
+    <div class="card" *ngFor="let cards of categories" style="width: 16rem">
+      <img src="{{ image_url+cards.catImage }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h3 class="card-text">{{ cards.catName }}</h3>
+
+        
+      </div>
+    </div>
+  </div>
+
+</div>
