@@ -1,0 +1,30 @@
+<div class="container">
+  <app-header></app-header>
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+
+      <h2 class="text-center">All Categories</h2>
+      <br>
+
+
+
+     <div class="row">
+      <div class="card" *ngFor="let cards of categories" style="width: 11rem">
+        <div (click)="onSelectCategory(cards)">
+          <img src="{{ image_url+cards.catImage }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h3 class="card-text">{{ cards.catName }}</h3>
+
+
+
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+    <div class="col-lg-2"></div>
+
+
+  </div>
+</div>

@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <div class="text-center">
+                <img src="../../../assets/image/icon.png" width="100px" height="100px">
+
+                <h1>Register Yourself with us!!</h1><hr>
+            </div>
+
+            <br>
+            <form #userForm="ngForm" (ngSubmit)="onSubmitForm()">
+            
+            <div class="form-group">
+                <label class="bold">Username</label>
+                <input #formUsername="ngModel" [(ngModel)]="register.username" type="text" class="form-control " name="username" [class.is-invalid]="formUsername.invalid && formUsername.touched" required>
+                <small class="text-danger" [class.d-none]="formUsername.valid || formUsername.untouched">This is required field</small>
+            </div>
+        
+
+                <br>
+                <div class="form-group">
+                    <label class="bold">Email</label>
+                    <input #userEmail="ngModel" [(ngModel)]="register.email" type="email" class="form-control " name="email" [class.is-invalid]="userEmail.invalid && userEmail.touched" required>
+                    <small class="text-danger" [class.d-none]="userEmail.valid || userEmail.untouched">This is required field</small>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="bold">Phone</label>
+                    <input #userPhone="ngModel" [(ngModel)]="register.phone" type="tel" class="form-control" name="phone" [class.is-invalid]="userPhone.invalid && userPhone.touched" required pattern="^\d{10}$">
+                    
+                    <div *ngIf="userPhone.errors && (userPhone.invalid && userPhone.touched)">
+                        <small *ngIf="userPhone.errors.required" class="text-danger">This is required field</small>
+                        <small *ngIf="userPhone.errors.pattern" class="text-danger">Enter valid phone number</small>
+
+
+                    </div>
+                </div>
+
+                <br>
+                <div class="form-group">
+                    <label class="bold">Category</label>
+                    <select [(ngModel)]="register.category" class="form-control " name="dropdown" >
+                        <option>--Please select Category--</option>
+                        <option *ngFor="let interest of interests">{{ interest }}</option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="bold">Gender</label>
+                </div>
+                <div >
+                    <input [(ngModel)]="register.gender" type="radio"  name="gender" value="male"  >
+                    <label>Male</label>
+                  </div>
+                  <div >
+                    <input [(ngModel)]="register.gender" type="radio"  name="gender" value="female">
+                    <label>Female</label>
+                  </div>
+                <br>
+                <div class="form-check">
+                    <input [(ngModel)]="register.subscribe" type="checkbox" name="Subscribe" value="subscribe">
+                    <label class="">Subscribe</label>
+                </div>
+                <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary">Register</button>
+            </form>
+            <br>
+           
+               
+            
+
+
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+
+
+</div>
