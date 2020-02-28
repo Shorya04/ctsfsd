@@ -1,0 +1,11 @@
+server:
+  port: 8300
+  
+spring:
+  application:
+    name: gallery-service
+    
+eureka:
+ client:
+    service-url:
+      defaultzone: http://localhost:8761/eureka/

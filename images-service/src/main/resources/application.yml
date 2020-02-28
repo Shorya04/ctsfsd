@@ -1,0 +1,7 @@
+server:
+  port: 8200
+  
+spring:  application:    name: image-service
+    
+eureka:
+ client:    service-url:      defaultzone: http://localhost:8761/eureka
