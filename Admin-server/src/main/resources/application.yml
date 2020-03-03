@@ -1,0 +1,2 @@
+server:  port: 7000eureka:  client:    service-url:      defaultzone: http://localhost8761/eureka/    register-with-eureka: false    fetch-registry: false             
+ 
