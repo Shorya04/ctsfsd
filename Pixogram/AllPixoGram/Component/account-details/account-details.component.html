@@ -1,0 +1,52 @@
+<div class="row" >
+  <div class="col-lg-2" style="font-size: 5vh">
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading text-center"><u>Account</u></div>
+      <a routerLink="/NewFeed" class="list-group-item btn list-group-item">News Feed</a>
+      <a routerLink="/BlockUser" class="list-group-item btn list-group-item ">Blocked Accounts</a>
+      <a routerLink="/AccountDetails" class="list-group-item btn list-group-item ">Account update</a>
+      <a routerLink="/Search" class="list-group-item btn list-group-item ">Search</a>
+      <a routerLink="/NewFeed" class="list-group-item btn list-group-item ">Logout</a>
+
+    </div>
+  </div>
+
+  <div class="col-10 col-md-8" style="margin-top: 3vh">
+  <form style="font-size: 1.4vw">
+    <div class="form-group row">
+      <label for="staticEmail" class="col-sm-2 col-form-label">UserName</label>
+      <div class="col-sm-10">
+
+<!-- Username -->
+        <input type="text" class="form-control-plaintext" id="staticUSername" value="" placeholder="Username">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-10">
+
+<!-- Password -->
+        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputPassword" class="col-sm-2 col-form-label">Confirm Password</label>
+      <div class="col-sm-10">
+<!-- Password confirm -->
+        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+<!-- Email -->
+        <input type="email" readonly class="form-control-plaintext" id="staticEmail" value="" placeholder="Email">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary mb-lg-auto">Confirm identity</button>
+  </form>
+</div>
+</div>
