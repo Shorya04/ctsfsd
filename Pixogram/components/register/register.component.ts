@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Register } from 'src/app/model/register';
+import { FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -21,4 +22,7 @@ export class RegisterComponent implements OnInit {
   onSubmitForm(){
     console.log(this.register);
   }
+
+ 
 }
+

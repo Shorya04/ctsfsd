@@ -11,7 +11,7 @@
             {{userForm.value |  json}}
 
             <br>
-            <form #userForm="ngForm" (ngSubmit)="onSubmitForm()">
+            <form #userForm="ngForm" (ngSubmit)="onSubmitForm()" [appMatchPassword]="['password', 'repeatPassword']">
                 <br>
                 <div class="form-group">
                     <label class="bold">Username</label>
@@ -36,14 +36,17 @@
                     <input #repeatPassword="ngModel" [(ngModel)]="register.repeat" type="text" class="form-control "
                         name="reppassword" [class.is-invalid]="repeatPassword.invalid && repeatPassword.touched"
                         required>
+                    
                     <small class="text-danger" [class.d-none]="repeatPassword.valid || repeatPassword.untouched">This is
                         required field</small>
+                        <small class="text-danger" *ngIf="repeatPassword.touched && repeatPassword.errors?.passwordMismatch">Passwords doesnot match
+                            </small>
                 </div>
 
 
                 <div class="form-group">
                     <label class="bold">Email</label>
-                    <input #formEmail="ngModel" [(ngModel)]="register.email" type="email" class="form-control "
+                    <input #formEmail="ngModel" [(ngModel)]="register.email" type="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control "
                         name="email" [class.is-invalid]="formEmail.invalid && formEmail.touched" required>
                     <small class="text-danger" [class.d-none]="formEmail.valid || formEmail.untouched">This is
                         required field</small>
